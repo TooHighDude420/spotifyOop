@@ -1,6 +1,6 @@
 ﻿using spotifyOop;
 
 Console.WriteLine("Hello, World!");
-Afspeellijst testlijst = new Afspeellijst();
+Playlist testlijst = new Playlist();
 
-testlijst.afspeellijst.Add(new Nummer());
+testlijst.afspeellijst.Add(new Number());

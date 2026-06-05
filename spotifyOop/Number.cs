@@ -4,8 +4,8 @@ using System.Text;
 
 namespace spotifyOop
 {
-    internal class Afspeellijst
+    internal class Number
     {
-        public List<Nummer> afspeellijst = new List<Nummer>();
+
     }
 }
