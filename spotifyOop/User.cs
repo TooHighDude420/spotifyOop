@@ -10,12 +10,18 @@ namespace spotifyOop
         public Dictionary<String, Playlist> userPlaylists = [];
         public List<User> Friends = [];
 
+        public void showFriends()
+        {
+            foreach (var friend in Friends)
+            {
+                Console.WriteLine($"name:{friend.Name}, playlists count:{friend.userPlaylists.Count}");
+            }
+        }
+
         public void AddFriend (User user)  {
             Friends.Add (user);
         }
         
-
-
         public void CreatePlaylist(String name, Number? firstNumber)
         {
             if (userPlaylists.ContainsKey(name)) {
