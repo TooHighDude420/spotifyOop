@@ -8,6 +8,13 @@ namespace spotifyOop
     {
         public String Name { get; } = name;
         public Dictionary<String, Playlist> userPlaylists = [];
+        public List<User> Friends = [];
+
+        public void AddFriend (User user)  {
+            Friends.Add (user);
+        }
+        
+
 
         public void CreatePlaylist(String name, Number? firstNumber)
         {
