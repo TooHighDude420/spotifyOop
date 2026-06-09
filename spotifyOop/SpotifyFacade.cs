@@ -7,12 +7,42 @@ namespace spotifyOop
 
     internal class SpotifyFacade
     {
-        private User mainUser = new("main");
         public List<Number> allNumbers { get; } = new List<Number>();
 
-        public void addNumber(Number number)
+        public void addNumber(User user, Playlist playlist, Number number)
+        { 
+            if (playlist != null)
+            {
+                playlist.addNumber(number);
+            }
+        }
+
+        public void createPlaylist(User user, String name, Number? firstNumber)
         {
-            mainUser.AddNumber(number);
+            user.CreatePlaylist(name, firstNumber);
+        }
+
+        public void showUserFriends(User user)
+        {
+            user.showFriends();
+        }
+
+        public void addFriend(User user)
+        {
+            user.AddFriend(user);
+        }
+
+        public Playlist? getPlaylist(User user, String name) 
+        {
+            if (user.getPlayList(name) != null)
+            {
+                return user.getPlayList(name);
+            }
+
+            else
+            {
+                throw new ArithmeticException("playlist does not exsist");
+            }
         }
     }
 }
