@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace spotifyOop
 {
-    internal class User(String name)
+    internal class User
     {
-        public String Name { get; } = name;
-        public Dictionary<String, Playlist> userPlaylists = [];
+        public String Name;
+        public ImmutableDictionary<String, Playlist> playlists;
+        private Dictionary<String, Playlist> userPlaylists = [];
         public List<User> Friends = [];
+
+        public User(String name)
+        {
+            this.Name = name;
+            this.playlists = this.userPlaylists.ToImmutableDictionary();
+        }
 
         public void showFriends()
         {
