@@ -5,8 +5,6 @@ User friendTest = new("friend");
 
 Number testNumber = new Number();
 
-
-
 SpotifyFacade facade = new SpotifyFacade();
 
 //testing playlist features

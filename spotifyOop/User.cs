@@ -8,14 +8,12 @@ namespace spotifyOop
     internal class User
     {
         public String Name;
-        public ImmutableDictionary<String, Playlist> playlists;
         private Dictionary<String, Playlist> userPlaylists = [];
         public List<User> Friends = [];
 
         public User(String name)
         {
             this.Name = name;
-            this.playlists = this.userPlaylists.ToImmutableDictionary();
         }
 
         public void showFriends()
@@ -30,11 +28,11 @@ namespace spotifyOop
             
             else
             {
-                Console.WriteLine("no friends");
+                Console.WriteLine();
             }
         }
 
-        public void AddFriend (User user)  
+        public void AddFriend(User user)  
         {
             Friends.Add(user);
         }
@@ -69,6 +67,11 @@ namespace spotifyOop
             {
                 return null;
             }
+        }
+
+        public void addNumberOrAlbum(String name, Number? number, Album? album)
+        {
+
         }
     }
 }
