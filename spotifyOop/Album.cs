@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace spotifyOop
 {
-    internal class Albums(String name, List<String> genres, List<Number> numbers)
+    internal class Albums
     {
         private List<Number> Album = [];
         public IReadOnlyList<Number> ReadAlbum
@@ -18,7 +18,19 @@ namespace spotifyOop
             }
         }
 
-        public String Name { get; } = name;
-        public List<String> Genre { get; } = genres;
+        public String Name { get; }
+        public List<String> Genre { get; }
+
+        public Albums(String name, List<String> genres, List<Number> numbers)
+        {
+            this.Name = name;
+            this.Genre = genres;
+
+            foreach (Number number in numbers)
+            {
+                Album.Add(number);
+            }
+
+        }
     }
 }
