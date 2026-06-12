@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace spotifyOop
 {
-    internal class User(String name)
+    internal class User
     {
-        public String Name { get; } = name;
-        public Dictionary<String, Playlist> userPlaylists = [];
+        public String Name;
+        private Dictionary<String, Playlist> userPlaylists = [];
         public List<User> Friends = [];
+
+        public User(String name)
+        {
+            this.Name = name;
+        }
 
         public void showFriends()
         {
@@ -22,11 +28,11 @@ namespace spotifyOop
             
             else
             {
-                Console.WriteLine("no friends");
+                Console.WriteLine();
             }
         }
 
-        public void AddFriend (User user)  
+        public void AddFriend(User user)  
         {
             Friends.Add(user);
         }
@@ -61,6 +67,11 @@ namespace spotifyOop
             {
                 return null;
             }
+        }
+
+        public void addNumberOrAlbum(String name, Number? number, Album? album)
+        {
+
         }
     }
 }
