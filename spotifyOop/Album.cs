@@ -8,27 +8,27 @@ using System.Xml.Linq;
 
 namespace spotifyOop
 {
-    internal class Albums
+    internal class Album
     {
-        private List<Number> Album = [];
+        private List<Number> Albums = [];
         public IReadOnlyList<Number> ReadAlbum
         {
             get {
-                return this.Album.ToImmutableList(); 
+                return this.Albums.ToImmutableList(); 
             }
         }
 
         public String Name { get; }
         public List<String> Genre { get; }
 
-        public Albums(String name, List<String> genres, List<Number> numbers)
+        public Album(String name, List<String> genres, List<Number> numbers)
         {
             this.Name = name;
             this.Genre = genres;
 
             foreach (Number number in numbers)
             {
-                Album.Add(number);
+                Albums.Add(number);
             }
 
         }
