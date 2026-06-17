@@ -19,12 +19,12 @@ namespace spotifyOop
         }
 
         public String Name { get; }
-        public List<String> Genre { get; }
+        public String Genre { get; }
 
-        public Album(String name, List<String> genres, List<Number> numbers)
+        public Album(String name, String genre, List<Number> numbers)
         {
             this.Name = name;
-            this.Genre = genres;
+            this.Genre = genre;
 
             foreach (Number number in numbers)
             {

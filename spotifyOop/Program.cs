@@ -16,7 +16,21 @@ Number Speed_demon = new Number("Speed Demon", "Pop", "Michael Jackson");
 Number The_way_you_make_me_feel = new Number("The way you make me feel", "Pop", "Michael Jackson");
 Number I_just_cant_stop_loving_u = new Number("I just can't stop loving u", "Pop", "Michael Jackson");
 
+List<Number> bad = [
+    Another_part_of_me,
+    Bad,
+    Dirty_diana,
+    Just_good_friends, 
+    Leave_me_alone,
+    Liberian_girl, 
+    Man_in_the_mirror,
+    Smooth_criminal,
+    Speed_demon,
+    The_way_you_make_me_feel,
+    I_just_cant_stop_loving_u,
+    ];
 
+Album mj_bad = new Album("bad", "Pop", bad);
 
 
 SpotifyFacade facade = new SpotifyFacade();
