@@ -3,7 +3,21 @@
 User mainUser = new("main");
 User friendTest = new("friend");
 
-Number testNumber = new Number();
+//Hardcoded numbers.
+Number Another_part_of_me = new Number("Another part of me", "Pop", "Michael Jackson");
+Number Bad = new Number("Bad", "Pop", "Michael Jackson");
+Number Dirty_diana = new Number("Dirty Diana", "Pop", "Michael Jackson");
+Number Just_good_friends = new Number("Just good friends", "Pop", "Michael Jackson");
+Number Leave_me_alone = new Number("Leave me alone", "Pop", "Michael Jackson");
+Number Liberian_girl = new Number("Liberain girl", "Pop", "Michael Jackson");
+Number Man_in_the_mirror = new Number("Man in the mirror", "Pop", "Michael Jackson");
+Number Smooth_criminal = new Number("Smooth Criminal", "Pop", "Michael Jackson");
+Number Speed_demon = new Number("Speed Demon", "Pop", "Michael Jackson");
+Number The_way_you_make_me_feel = new Number("The way you make me feel", "Pop", "Michael Jackson");
+Number I_just_cant_stop_loving_u = new Number("I just can't stop loving u", "Pop", "Michael Jackson");
+
+
+
 
 SpotifyFacade facade = new SpotifyFacade();
 
@@ -13,9 +27,10 @@ Playlist? testlist = facade.getPlaylist(mainUser, "testplay");
 
 if (testlist != null) 
 {
-    facade.addNumber(mainUser, testlist, testNumber);
+    facade.addNumber(mainUser, testlist, Bad);
 }
 
 //testing friend features
 mainUser.AddFriend(friendTest);
 facade.showUserFriends(mainUser);
+
