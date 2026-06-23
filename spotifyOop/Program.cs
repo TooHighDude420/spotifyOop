@@ -3,6 +3,7 @@
 User mainUser = new("main");
 User friendTest = new("friend");
 
+Number testNumber = new Number("bad", "pop", "michael jackson");
 //Hardcoded numbers.
 Number Another_part_of_me = new Number("Another part of me", "Pop", "Michael Jackson");
 Number Bad = new Number("Bad", "Pop", "Michael Jackson");
@@ -41,10 +42,13 @@ Playlist? testlist = facade.getPlaylist(mainUser, "testplay");
 
 if (testlist != null) 
 {
+    facade.addNumber(testlist, testNumber);
     facade.addNumber(mainUser, testlist, Bad);
 }
 
 //testing friend features
 mainUser.AddFriend(friendTest);
-facade.showUserFriends(mainUser);
+friendTest.AddFriend(mainUser);
 
+facade.showUserFriends(mainUser);
+facade.showUserFriends(friendTest);

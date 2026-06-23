@@ -9,11 +9,19 @@ namespace spotifyOop
     {
         public List<Number> allNumbers { get; } = new List<Number>();
 
-        public void addNumber(User user, Playlist playlist, Number number)
+        public void addNumber(Playlist playlist, Number number)
         { 
             if (playlist != null)
             {
-                playlist.addNumber(number);
+                playlist.Add(number);
+            }
+        }
+
+        public void addNumbers(Playlist playlist, List<Number> numbers)
+        {
+            if (playlist != null)
+            {
+                playlist.Add(numbers);
             }
         }
 
