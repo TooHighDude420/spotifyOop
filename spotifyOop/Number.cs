@@ -4,7 +4,7 @@ using System.Text;
 
 namespace spotifyOop
 {
-    internal class Number
+    internal class Number : IPlayable
     {
         public string Name;
         public string Genre;
@@ -15,6 +15,11 @@ namespace spotifyOop
             this.Name = name;
             this.Genre = genre;
             this.Artist = artist;
+        }
+
+        public void Play()
+        {
+            throw new NotImplementedException();
         }
     }
 }
