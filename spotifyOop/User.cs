@@ -39,7 +39,13 @@ namespace spotifyOop
             Friends.Add(user);
         }
 
-        public void CreatePlaylist(String name, Number? firstNumber = null)
+      public void DeleteFriend (User user)
+        {
+            Friends.Remove(user);
+        }
+
+
+        public void CreatePlaylist(String name, Number? firstNumber)
         {
             userPlaylists.Add(new Playlist(name, this, firstNumber));
         }
