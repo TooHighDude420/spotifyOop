@@ -16,6 +16,8 @@ namespace spotifyOop
             this.Name = name;
         }
 
+        
+
         public void showFriends()
         {
             if (Friends.Count > 0)
