@@ -2,6 +2,10 @@
 
 User mainUser = new("main");
 User friendTest = new("friend");
+User Nataro = new User("Nataro");
+User Senna = new User("Senna");
+User Robbert = new User("Robbert");
+User Jasmijn = new User("Jasmijn");
 
 Number testNumber = new Number("bad", "pop", "michael jackson");
 //Hardcoded numbers.
