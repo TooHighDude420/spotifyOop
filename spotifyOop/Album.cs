@@ -24,6 +24,19 @@ namespace spotifyOop
             this.Genre = genres;
             Add(numbers);
         }
+        public void Play()
+
+        {
+
+            foreach (Number number in Numbers)
+
+            {
+
+                number.Play();
+
+            }
+
+        }
 
         public void ShowAlbum()
         {
