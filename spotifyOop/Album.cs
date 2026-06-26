@@ -24,5 +24,18 @@ namespace spotifyOop
             this.Genre = genres;
             Add(numbers);
         }
+
+        public void ShowAlbum()
+        {
+            Console.WriteLine($"Album: {this.Name}");
+            Console.WriteLine($"Artiest: {this.Numbers[0].Artist}");
+
+            Console.WriteLine("Nummers:");
+            foreach (Number number in this.Numbers)
+            {
+                Console.WriteLine($"- {number.Name}");
+            }
+        }
+
     }
 }
