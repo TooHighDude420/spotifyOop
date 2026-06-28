@@ -8,15 +8,13 @@ namespace spotifyOop
     internal class User
     {
         public String Name;
-        private List<Playlist> userPlaylists = [];
+        public List<Playlist> userPlaylists { get; } = [];
         public List<User> Friends = [];
 
         public User(String name)
         {
             this.Name = name;
         }
-
-        
 
         public void showFriends()
         {
@@ -42,6 +40,11 @@ namespace spotifyOop
         public void CreatePlaylist(String name, Number? firstNumber = null)
         {
             userPlaylists.Add(new Playlist(name, this, firstNumber));
+        }
+
+        public void CreatePlaylist(String name, NumberCollection? firstNumbers = null)
+        {
+            userPlaylists.Add(new Playlist(name, this, firstNumbers.Numbers));
         }
 
         public Playlist? getPlayList(String name)
