@@ -15,30 +15,17 @@ namespace spotifyOop
 
             if (firstSong != null)
             {
-                AddNumber(firstSong);
+                Add(firstSong);
             }
         }
 
-        public void AddNumber(Number number)
+        public Playlist(String name, User user, List<Number>? firstSong) : base(name)
         {
-            this.Add(number);
-        }
+            this.user = user;
 
-        public void AddNumbers(List<Number> numbers)
-        {
-            this.Add(numbers);
-        }
-
-        public void RemoveNumber(Number number)
-        {
-            this.Remove(number);
-        }
-
-        public void Play()
-        {
-            foreach (Number number in Numbers)
+            if (firstSong != null)
             {
-                number.Play();
+                Add(firstSong);
             }
         }
     }

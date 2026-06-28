@@ -19,7 +19,7 @@ namespace spotifyOop
 
         public void Play()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"playing: {Name} by: {Artist} gnere: {Genre}");
         }
     }
 }
