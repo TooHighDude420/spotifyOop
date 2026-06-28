@@ -1,17 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace spotifyOop
 {
-    internal class Playlist
+    internal class Playlist : NumberCollection
     {
-        public List<Number> playlist = [];
+        public User user;
 
-        public void addNumber(Number number)
+        public Playlist(String name, User user, Number? firstSong) : base(name)
         {
-            playlist.Add(number);
+            this.user = user;
+
+            if (firstSong != null)
+            {
+                Add(firstSong);
+            }
         }
 
+        public Playlist(String name, User user, List<Number>? firstSong) : base(name)
+        {
+            this.user = user;
+
+            if (firstSong != null)
+            {
+                Add(firstSong);
+            }
+        }
     }
 }

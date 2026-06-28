@@ -8,7 +8,7 @@ namespace spotifyOop
     internal class User
     {
         public String Name;
-        private Dictionary<String, Playlist> userPlaylists = [];
+        public List<Playlist> userPlaylists { get; } = [];
         public List<User> Friends = [];
 
         public User(String name)
@@ -25,44 +25,42 @@ namespace spotifyOop
                     Console.WriteLine($"name:{friend.Name}, playlists count:{friend.userPlaylists.Count}");
                 }
             }
-            
+
             else
             {
                 Console.WriteLine();
             }
         }
 
-        public void AddFriend(User user)  
+        public void AddFriend(User user)
         {
             Friends.Add(user);
         }
-        
-        public void CreatePlaylist(String name, Number? firstNumber)
-        {
-            if (userPlaylists.ContainsKey(name)) 
-            {
-                throw new ArithmeticException("playlist with that name already in use");
-            }
 
-            if (firstNumber != null)
-            {
-                userPlaylists[name] = new Playlist();
-                userPlaylists[name].addNumber(firstNumber);
-            }
-            
-            else
-            {
-                userPlaylists[name] = new Playlist();
-            }
+        public void CreatePlaylist(String name, Number? firstNumber = null)
+        {
+            userPlaylists.Add(new Playlist(name, this, firstNumber));
+        }
+
+        public void CreatePlaylist(String name, NumberCollection? firstNumbers = null)
+        {
+            userPlaylists.Add(new Playlist(name, this, firstNumbers.Numbers));
         }
 
         public Playlist? getPlayList(String name)
         {
-            if (this.userPlaylists.ContainsKey(name))
+            if (this.userPlaylists.Count > 0)
             {
-                return this.userPlaylists[name];
-            }
+                foreach (Playlist playlist in this.userPlaylists)
+                {
+                    if (playlist.Name == name)
+                    {
+                        return playlist;
+                    }
+                }
 
+                return null;
+            }
             else
             {
                 return null;
