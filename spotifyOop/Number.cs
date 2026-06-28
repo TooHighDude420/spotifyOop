@@ -19,7 +19,7 @@ namespace spotifyOop
 
         public void Play()
         {
-            Console.WriteLine($"playing: {Name} by: {Artist}");
+            Console.WriteLine($"playing: {Name} by: {Artist} gnere: {Genre}");
         }
     }
 }
